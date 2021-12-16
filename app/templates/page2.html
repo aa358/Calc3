@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        p {font-size: 16px;}
+        .margin {margin-bottom: 45px;}
+        .bg-1 {
+            background-color: #1abc9c; /* Green */
+            color: #ffffff;
+        }
+        .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        }
+        .bg-2 {
+            background-color: #474e5d; /* Dark Blue */
+            color: #ffffff;
+        }
+        .bg-3 {
+            background-color: #ffffff; /* White */
+            color: #555555;
+        }
+        .bg-4 {
+            background-color: #2f2f2f; /* Black Gray */
+            color: #fff;
+        }
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+        .navbar-nav  li a:hover {
+            color: #1abc9c !important;
+        }
+        h1 {
+            text-align: center;
+        }
+        .important {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    <body style="background-color:#1abc9c;">
+    <br>
+    <h1>Project 3</h1>
+    <div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Pylint and OOP Terms</h3>
+    <img src="{{ url_for('static', filename='images/pylint.png') }}" width="350" height="350">
+    <h3></h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">What is Pylint?</h3>
+    <p>Pylint is a source-code, bug and quality checker for the Python programming language. It is named following a common convention in Python of a "py" prefix, and a nod to the C programming lint program.</p>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+    <h3 class="margin">Pylint and OOP terms</h3><br>
+    <div class="row">
+        <div class="col-sm-3">
+            <b>How to install Pylint</b>
+            <p></p>
+	    <p>Pylint should be easily installable using pip.</p>
+            <p>Command: pip install pylint</p>
+            <b>How to invoke Pylint</b>
+	    <p>To run Pylint, change the directory to where the file is located on command prompt</p>
+	    <p>To get a full report, run the command: pylint fileName.py </p>
+        <p>To return all errors within a file, run pylint -rn fileName.py </p>
+        <p>To run the Pylint GUI, run the following command: pylint-gui </p>
+         <b>OOP Terms</b>
+	    <p>Factory: a creational design pattern that offers an interface for producing objects in a superclass while allowing subclasses to choose the type of objects generated.</p>
+	    <p>Instantiation: the creation of an object (or a "instance" of a specified class).</p>
+	    <p>Object: A developer-created abstract data type. </p>
+	    <p>Class: a blueprint for constructing objects, initializing state, and behavior implementations.</p>
+	    <p>Namespace: a declarative region that gives the identifiers inside it a scope.</p>
+            <p>Constructor: A subroutine that is called to construct an object. </p>
+        </div>
+        <div class="col-sm-6">
+            <p></p>
+            <img src="{{ url_for('static', filename='images/oop.png') }}" width="500" height="500">
+            <img src="{{ url_for('static', filename='images/oop2.png') }}" width="500" height="500">
+        </div>
+        <div class="col-sm-3">
+	    <b>OOP Terms cont. </b>
+            <p>Fixture: functions that run before test fixtures are executed</p>
+        <p>Type Hinting: a technique for forcing a function to accept the appropriate data type.</p>
+        <p>Type Casting: when you assign a value of one primitive data type to another type.</p>
+            <p>Unit Test: test case to cover all possible states and configurations of the software units in order to discover bugs</p>
+            <p>Static: A static variable is one that has been allocated "statically," that is, for the duration of the program's execution.</p>
+            <p>Class Method: A class method is a method that is tied to the class rather than the class's object. </p>
+            <p>Façade: A façade is a front-facing interface that hides more intricate underlying or structural code behind it.</p>
+            <p>Design Patterns: A design pattern is a generic, repeatable solution to a common software design problem.</p>
+            <p>Method: A method is a process in object-oriented programming (OOP) that is linked to a message and an object.</p>
+            <p>Property: A property, in some object-oriented programming languages, is a special sort of class member, intermediate in functionality between a field and a method. </p>
+        </div>
+    </div>
+</div>
+    </body>
+{% endblock %}

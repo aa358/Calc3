@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        p {font-size: 16px;}
+        .margin {margin-bottom: 45px;}
+        .bg-1 {
+            background-color: #1abc9c; /* Green */
+            color: #ffffff;
+        }
+        .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        }
+        .bg-2 {
+            background-color: #474e5d; /* Dark Blue */
+            color: #ffffff;
+        }
+        .bg-3 {
+            background-color: #ffffff; /* White */
+            color: #555555;
+        }
+        .bg-4 {
+            background-color: #2f2f2f; /* Black Gray */
+            color: #fff;
+        }
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+        .navbar-nav  li a:hover {
+            color: #1abc9c !important;
+        }
+        h1 {
+            text-align: center;
+        }
+        .important {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    <body style="background-color:#1abc9c;">
+    <br>
+    <h1>Project 3</h1>
+    <div class="container-fluid bg-1 text-center">
+    <h3 class="margin">GIT</h3>
+    <img src="{{ url_for('static', filename='images/git.png') }}" width="350" height="350">
+    <h3></h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">What is Git?</h3>
+    <p>Git is a piece of software that allows you to monitor changes in any group of files. It's typically used to coordinate work among programmers who are working on source code together during software development.</p>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+    <h3 class="margin">GIT BASH</h3><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <b>How to install Git Bash</b>
+            <p></p>
+	    <p>Git Bash comes included as part of the Git For Windows package. Download and install Git For Windows like other Windows applications. Once downloaded find the included .exe file and open to execute Git Bash.</p>
+            <b>How to use Git Bash</b>
+	    <p></p>
+	    <p>Git Bash has the same operations as a standard Bash experience. It will be helpful to review basic Bash usage. Advanced usage of Bash is outside the scope of this Git focused document.</p>
+        </div>
+        <div class="col-sm-4">
+            <p></p>
+            <img src="{{ url_for('static', filename='images/gitbash.png') }}" width="350" height="350">
+        </div>
+        <div class="col-sm-4">
+	    <b>Commands</b>
+	    <p></p>
+	    <p><b>git add</b> - Adds files in the to the staging area for Git. Before a file is available to commit to a repository, the file needs to be added to the Git index.</p>
+	    <p><b>git commit</b> - Record the changes made to the files to a local repository. For easy reference, each commit has a unique ID.</p>
+	    <p><b>git status</b> - This command returns the current state of the repository.</p>
+	    <p><b>git config</b> - With Git, there are many configurations and settings possible. git config is how to assign these settings. Two important settings are user user.name and user.email.</p>
+	    <p><b>git branch</b> - To determine what branch the local repository is on, add a new branch, or delete a branch.</p>
+	    <p><b>git checkout</b> - To start working in a different branch, use git checkout to switch branches.</p>
+        </div>
+    </div>
+</div>
+    </body>
+{% endblock %}

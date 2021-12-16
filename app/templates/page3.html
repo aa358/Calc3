@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        p {font-size: 16px;}
+        .margin {margin-bottom: 45px;}
+        .bg-1 {
+            background-color: #1abc9c; /* Green */
+            color: #ffffff;
+        }
+        .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        }
+        .bg-2 {
+            background-color: #474e5d; /* Dark Blue */
+            color: #ffffff;
+        }
+        .bg-3 {
+            background-color: #ffffff; /* White */
+            color: #555555;
+        }
+        .bg-4 {
+            background-color: #2f2f2f; /* Black Gray */
+            color: #fff;
+        }
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+        .navbar-nav  li a:hover {
+            color: #1abc9c !important;
+        }
+        h1 {
+            text-align: center;
+        }
+        .important {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    <body style="background-color:#1abc9c;">
+    <br>
+    <h1>Project 3</h1>
+    <div class="container-fluid bg-1 text-center">
+    <h3 class="margin">OOP Principles</h3>
+    <img src="{{ url_for('static', filename='images/oopP2.png') }}" width="500" height="350">
+    <h3></h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">What are OOP Principles?</h3>
+    <p>The basic principles of OOP involves Abstraction, Encapsulation, Inheritance, and Polymorphism. There are also objects and classes. Together, they stand as the working principle of any object-oriented programming language.</p>
+</div>
+
+<div class="container-fluid bg-3 text-center">
+    <h3 class="margin">OOP Principles</h3><br>
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Encapsulation</b>
+            <p>One of the core principles of object-oriented programming is encapsulation (OOP). It discusses the concept of data wrapping and the methods that operate with data as a single unit. An example of encapsulation from a calculator program is the method shown below</p>
+	    <b><p>def convert_args_to_list_float(values):</p>
+            <p>list_values_float = []</p>
+            <p>for item in values:</p>
+            <p>list_values_float.append(float(item))</p>
+            <p> return tuple(list_values_float)</p> </b>
+            <p>This method is an example of encapsulation because it encapsulates all the data and variables e.g. list_values_float cannot be called anywhere else outside this method</p>
+            <b>Inheritance</b>
+	    <p>: Inheritance allows us to create a class that inherits all of another class's methods and attributes. The parent class, often known as the base class, is the one from which the inherited class is derived. A child class, also known as a derived class, is a class that inherits from another class for example the Addition class is the child class of the Calculation class</p>
+            <p><b>class Addition(Calculation):</b></p>
+        <p>This is an example of Inheritance because the Addition class is inheriting all the methods and attributes of the Calculation class</p>
+        </div>
+        <div class="col-sm-6">
+             <b>Polymorphism</b>
+	    <p>Polymorphism means existing in many forms. Variables, functions, and objects can exist in multiple forms in Java and Python. An example of polymorphism from the calculator program is the same method get_result operating differently in different classes as shown below. It is doing subtraction in the first block of code and multiplication in the second block of code.  </p>
+            <p><b>1st form</b></p>
+	    <p>class Subtraction(Calculation):</p>
+        <p><b>def get_result(self):</b></p>
+            <p> difference_of_values = 0.0</p>
+            <p>for value in self.values:</p>
+            <p><b>difference_of_values = difference_of_values - value</b></p>
+            <p>print.print(value)</p>
+            <p>return difference_of_values</p>
+            <p><b>2nd form</b></p>
+            <p>class Multiplication(Calculation):</p>
+            <p><b> def get_result(self):</b></p>
+            <p> result = 1.0</p>
+            <p>for value in self.values:</p>
+            <p><b> result = result * value</b></p>
+            <p>return result</p>
+            <img src="{{ url_for('static', filename='images/oopP3.png') }}" width="350" height="350">
+        </div>
+        <div class="col-sm-3">
+           <b>Abstraction</b>
+            <p> Abstraction is hiding unnecessary details from the user. That enables the user to implement more complex logic on top of the provided abstraction without understanding or even thinking about all the hidden complexity. An example of abstraction from the calculator program is </p>
+        <p>class Addition(Calculation):</p>
+            <p>def get_result(self):</p>
+            <b><p> sum_of_values = 0.0</p>
+                <p>for value in self.values:</p>
+                <p> sum_of_values = value + sum_of_values</p>
+            </b>
+            <p> return sum_of_values</p>
+            <p>The code in bold is an example of abstraction because it hides the internal functionality of the addition method from the user. The user just gets the results of the method, without knowing how the calculator did it. </p>
+        <img src="{{ url_for('static', filename='images/oopP4.png') }}" width="300" height="350">
+        </div>
+    </div>
+</div>
+     </body>
+{% endblock %}

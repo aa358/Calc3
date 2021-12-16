@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        p {font-size: 16px;}
+        .margin {margin-bottom: 45px;}
+        .bg-1 {
+            background-color: #1abc9c; /* Green */
+            color: #ffffff;
+        }
+        .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        }
+        .bg-2 {
+            background-color: #474e5d; /* Dark Blue */
+            color: #ffffff;
+        }
+        .bg-3 {
+            background-color: #ffffff; /* White */
+            color: #555555;
+        }
+        .bg-4 {
+            background-color: #2f2f2f; /* Black Gray */
+            color: #fff;
+        }
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+        .navbar-nav  li a:hover {
+            color: #1abc9c !important;
+        }
+        h1 {
+            text-align: center;
+        }
+        .important {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    <body style="background-color:#1abc9c;">
+    <br>
+    <h1>Project 3</h1>
+    <div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Sep of Concerns</h3>
+    <img src="{{ url_for('static', filename='images/soc2.png') }}" width="700" height="400">
+    <h3></h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+    <h3 class="margin">What is Separation of Concerns?</h3>
+    <p>separation of concerns (SoC) is a design principle for separating a computer program into distinct sections. Each section addresses a separate concern, a set of information that affects the code of a computer program.</p>
+</div>
+    <!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+    <h3 class="margin">Separation of Concerns</h3><br>
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Purpose of SoC</b>
+            <p>It's crucial because the individual components' absence of duplication and singularity of purpose makes the entire system easier to manage. Separation of concerns is a technique for reducing connection between classes and increasing cohesion. The degree of interdependence between software components is referred to as coupling. The degree to which the pieces inside a module belong together is referred to as cohesion.</p>
+<p>You can see a nice illustration of cohesiveness in the example below, where the class inherits values from the superclass. Because the program is performed in the module, this reduces coupling.</p>
+
+
+        </div>
+        <div class="col-sm-6">
+            <p></p>
+            <img src="{{ url_for('static', filename='images/soc.png') }}" width="500" height="350">
+        </div>
+        <div class="col-sm-3">
+	    <p><b>Example of Separation of Concerns from calculator</b></p>
+        <p>You can see separation of concerns in the example below.</p>
+            <p><b>class Subtraction(Calculation):
+    def get_result(self):
+        difference_of_values = 0.0
+        for value in self.values:
+            difference_of_values = difference_of_values - value
+            print.print(value)
+        return difference_of_values</b></p>
+            <p>This is an example of separation of concerns from the calculator program because the calculator has separate files for addition, as well as subtraction, multiplication and division, instead of having all the code crammed up in a single file. This makes the code simpler and easier to understand</p>
+        </div>
+    </div>
+</div>
+     </body>
+{% endblock %}
